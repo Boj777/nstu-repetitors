@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>НГТУ Репетиторы</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body { background:#f5f7fb; font-family:Arial,sans-serif; }
+.navbar { background:#172638; }
+.navbar-brand { color:white!important; font-weight:bold; }
+.sos-banner {
+    background:linear-gradient(135deg,#b91c1c,#f04438);
+    color:white; text-align:center; padding:35px 20px;
+    border-radius:18px; margin-top:25px;
+}
+.sos-button {
+    background:white; color:#c62828; border:0;
+    border-radius:12px; padding:16px 25px;
+    font-size:18px; font-weight:bold;
+    animation:pulse 1.6s infinite;
+}
+@keyframes pulse {
+    0% {box-shadow:0 0 0 0 #ffffff80;}
+    70% {box-shadow:0 0 0 14px #ffffff00;}
+    100% {box-shadow:0 0 0 0 #ffffff00;}
+}
+.tutor-card {
+    border:0; border-radius:16px; height:100%;
+    box-shadow:0 4px 15px #0000000d;
+    transition:.25s;
+}
+.tutor-card:hover { transform:translateY(-5px); }
+.faculty {
+    background:#e9f0ff; color:#2458b8;
+    padding:6px 12px; border-radius:20px;
+    font-size:12px; font-weight:bold;
+}
+.price { color:#16834a; font-size:22px; font-weight:bold; }
+.telegram { background:#229ed9; color:white; }
+.telegram:hover { background:#1686bd; color:white; }
+.filter-button { border-radius:25px; margin:4px; }
+.filter-button.active { background:#2563eb; color:white; }
+footer { background:#172638; color:white; padding:25px; margin-top:60px; }
+@media(max-width:576px) {
+    .sos-banner { padding:25px 15px; }
+    .sos-banner h2 { font-size:23px; }
+    .sos-button { width:100%; font-size:16px; }
+    .filter-button { font-size:13px; margin:3px 1px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="#">🎓 НГТУ Репетиторы</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#sos">SOS помощь</a></li>
+<li class="nav-item"><a class="nav-link" href="#tutors">Репетиторы</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<main class="container">
+
+<section id="sos" class="sos-banner">
+<h2>🚨 РАЗДЕЛ SOS</h2>
+<p class="fs-5">Помощь прямо сейчас! Горят дедлайны?</p>
+<button class="sos-button" data-bs-toggle="modal" data-bs-target="#sosModal">
+🚨 Оставить срочную заявку
+</button>
+<p class="small mt-3 mb-0">Бесплатно для студентов НГТУ</p>
+</section>
+
+<section id="tutors" class="py-5">
+<h2 class="text-center fw-bold mb-3">Найди своего репетитора</h2>
+<p class="text-center text-secondary">Выбирай специалиста и связывайся напрямую.</p>
+
+<div class="text-center my-4">
+<button class="btn btn-outline-primary filter-button active" data-filter="all">Все</button>
+<button class="btn btn-outline-primary filter-button" data-filter="math">Математика</button>
+<button class="btn btn-outline-primary filter-button" data-filter="physics">Физика</button>
+<button class="btn btn-outline-primary filter-button" data-filter="programming">Программирование</button>
+<button class="btn btn-outline-primary filter-button" data-filter="electrical">ТОЭ</button>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-4 tutor-item" data-subjects="programming math">
+<div class="card tutor-card">
+<div class="card-body p-4">
+<span class="faculty">АВТФ</span>
+<h5 class="mt-3 fw-bold">Алексей Смирнов</h5>
+<p class="text-secondary">Программирование, высшая математика. Помощь с лабораторными и подготовка к экзаменам.</p>
+<div class="price mb-3">900 ₽ / час</div>
+<a href="https://t.me/REPLACE_TUTOR_1" target="_blank" rel="noopener noreferrer" class="btn telegram w-100">✈ Написать в Telegram</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4 tutor-item" data-subjects="physics electrical">
+<div class="card tutor-card">
+<div class="card-body p-4">
+<span class="faculty">ФЭН</span>
+<h5 class="mt-3 fw-bold">Мария Волкова</h5>
+<p class="text-secondary">Физика, ТОЭ, электротехника. Объяснение сложных тем простым языком.</p>
+<div class="price mb-3">750 ₽ / час</div>
+<a href="https://t.me/REPLACE_TUTOR_2" target="_blank" rel="noopener noreferrer" class="btn telegram w-100">✈ Написать в Telegram</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4 tutor-item" data-subjects="math programming">
+<div class="card tutor-card">
+<div class="card-body p-4">
+<span class="faculty">ФПМИ</span>
+<h5 class="mt-3 fw-bold">Дмитрий Козлов</h5>
+<p class="text-secondary">Высшая математика, алгоритмы, Python и подготовка к сессии.</p>
+<div class="price mb-3">1100 ₽ / час</div>
+<a href="https://t.me/REPLACE_TUTOR_3" target="_blank" rel="noopener noreferrer" class="btn telegram w-100">✈ Написать в Telegram</a>
+</div>
+</div>
+</div>
+
+</div>
+<p class="text-center text-secondary mt-4 small">Демонстрационные профили. Замените их реальными репетиторами.</p>
+</section>
+</main>
+
+<!-- SOS MODAL -->
+<div class="modal fade" id="sosModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5 class="modal-title fw-bold">🚨 Срочная заявка</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<form id="sosForm">
+<div class="modal-body">
+
+<div class="mb-3">
+<label class="form-label">Предмет</label>
+<select class="form-select" name="subject" required>
+<option value="">Выберите предмет</option>
+<option>Высшая математика</option>
+<option>Физика</option>
+<option>ТОЭ</option>
+<option>Программирование</option>
+<option>Другое</option>
+</select>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Что нужно сделать и к какому времени?</label>
+<textarea class="form-control" name="task" rows="4" maxlength="1500" required></textarea>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Ваш бюджет (руб)</label>
+<input type="number" class="form-control" name="budget" min="1" max="1000000" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Ваш Telegram (@username)</label>
+<input type="text" class="form-control" name="telegram" placeholder="@username" pattern="@?[A-Za-z0-9_]{5,32}" required>
+</div>
+
+<div id="sosMessage" class="alert d-none"></div>
+
+<p class="small text-secondary">Нажимая кнопку, вы соглашаетесь на передачу данных в закрытый чат исполнителей.</p>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn btn-light" data-bs-dismiss="modal">Отмена</button>
+<button type="submit" class="btn btn-danger" id="submitSos">🚀 Отправить заявку</button>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+
+<footer class="text-center">
+<h5>НГТУ Репетиторы</h5>
+<p>Образовательная помощь студентам</p>
+<small>© 2026 НГТУ Репетиторы</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// ФИЛЬТРЫ
+const filterButtons = document.querySelectorAll(".filter-button");
+const tutorItems = document.querySelectorAll(".tutor-item");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        tutorItems.forEach(item => {
+            const subjects = item.dataset.subjects.split(" ");
+            const visible = filter === "all" || subjects.includes(filter);
+            item.classList.toggle("d-none", !visible);
+        });
+    });
+});
+
+// ОТПРАВКА SOS
+const sosForm = document.getElementById("sosForm");
+const sosMessage = document.getElementById("sosMessage");
+const submitButton = document.getElementById("submitSos");
+
+sosForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const formData = new FormData(sosForm);
+
+    const data = {
+        subject: formData.get("subject").trim(),
+        task: formData.get("task").trim(),
+        budget: Number(formData.get("budget")),
+        telegram: formData.get("telegram").trim()
+    };
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Отправляем...";
+    sosMessage.classList.add("d-none");
+
+    try {
+        const response = await fetch("/api/sos", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.error || "Ошибка отправки");
+        }
+
+        sosMessage.className = "alert alert-success";
+        sosMessage.textContent = "✅ Заявка отправлена! Ожидайте отклика репетиторов.";
+
+        sosForm.reset();
+
+        setTimeout(() => {
+            const modal = bootstrap.Modal.getInstance(document.getElementById("sosModal"));
+            if (modal) modal.hide();
+            sosMessage.classList.add("d-none");
+        }, 2000);
+
+    } catch (error) {
+        sosMessage.className = "alert alert-danger";
+        sosMessage.textContent = "❌ Не удалось отправить заявку. Попробуйте еще раз.";
+        console.error(error);
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "🚀 Отправить заявку";
+    }
+});
+</script>
+
+</body>
+</html>
